@@ -8,7 +8,7 @@ Rafael Bistričić | rbistrici22@foi.hr | 0016159848  | rbistrici22
 
 
 ## Opis domene
-Potrebno je napraviti sustav praćenje narudžbi u studentskom restoranu koji uključuje recenzije studenata.
+Potrebno je napraviti sustav praćenje narudžbi u studentskom restoranu koji uključuje recenzije studenata kako bi se poboljšala kvaliteta menze.
 
 ## Specifikacija projekta
 Potrebno je izraditi sustav za 
