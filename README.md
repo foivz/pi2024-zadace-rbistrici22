@@ -19,7 +19,7 @@ Potrebno je izraditi sustav za
 - izrada kataloga menija
 
 ## Zadatak
-(U root repozitorija učitajte zadatak koji ste dobili i potom ovdje stavite link na njegovo otvaranje!)
+[Link na zadatak](https://github.com/foivz/pi2024-zadace-rbistrici22/blob/master/User%20Requirements%20-%20SCVZ.pdf)
 
 ## Resursi
 (Zadaće je obvezno predati u obliku Wiki stranica na ovom repozitoriju. Slike i druge artefakte koje ćete koristiti na wiki stranicama smjestite u mapu dokumentacije u repozitoriju!)
