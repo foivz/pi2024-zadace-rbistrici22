@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Third_Assignment.Repositories;
 
 namespace Third_Assignment
 {
@@ -25,10 +19,20 @@ namespace Third_Assignment
             int score = (int)scoreNumericUpDown.Value;
             string comment = commentTextBox.Text;
 
-            ReviewRepository.SaveReview(mealID, score, comment);
+            ReviewRepository.AddReview(new Models.Review
+            {
+                MealID = mealID,
+                Score = score,
+                Comment = comment
+            });
             MessageBox.Show("Review submitted successfully!");
 
             this.Close();
         }
-    }
 
+        private void ReviewForm_Load(object sender, EventArgs e)
+        {
+            // Ako želite nešto učiniti pri učitavanju forme, dodajte kod ovdje.
+        }
+    }
+}

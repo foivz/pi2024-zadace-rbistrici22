@@ -11,7 +11,7 @@ namespace Third_Assignment
         public MainForm()
         {
             InitializeComponent();
-            this.Load += new EventHandler(MainForm_Load); // Ensure the event is associated
+            this.Load += new EventHandler(MainForm_Load);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace Third_Assignment
             {
                 List<Meal> meals = MealRepository.GetMeals();
                 dvgmeal.DataSource = meals;
-                dvgmeal.Refresh(); // Ensure the DataGridView refreshes
+                dvgmeal.Refresh();
             }
             catch (Exception ex)
             {
@@ -50,24 +50,25 @@ namespace Third_Assignment
                 int rowIndex = dvgmeal.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dvgmeal.Rows[rowIndex];
 
+                // Pretpostavimo da je MealID u prvom stupcu
+                int mealID = Convert.ToInt32(selectedRow.Cells["MealID"].Value);
 
                 this.Hide();
-                ReviewForm reviewForm = new ReviewForm();
+                ReviewForm reviewForm = new ReviewForm(mealID);
                 reviewForm.ShowDialog();
                 this.Close();
-
-                /*this.Hide();
-                ReviewForm reviewForm = new ReviewForm();
-                reviewForm.ShowDialog();
-                this.Close();*/
+            }
+            else
+            {
+                MessageBox.Show("Please select a meal first.", "No meal selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void FrmMeals_Load(object sender, EventArgs e)
         {
             ShowMeals();
         }
+
         private void ShowMeals()
         {
             List<Meal> meals = MealRepository.GetMeals();
