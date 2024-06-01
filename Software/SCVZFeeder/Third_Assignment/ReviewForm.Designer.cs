@@ -2,15 +2,8 @@
 {
     partial class ReviewForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,43 +13,70 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.commentTextBox = new System.Windows.Forms.TextBox();
+            this.scoreNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.submitButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.scoreNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // commentTextBox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 22);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1316, 348);
-            this.dataGridView1.TabIndex = 0;
+            this.commentTextBox.Location = new System.Drawing.Point(12, 22);
+            this.commentTextBox.Multiline = true;
+            this.commentTextBox.Name = "commentTextBox";
+            this.commentTextBox.Size = new System.Drawing.Size(316, 86);
+            this.commentTextBox.TabIndex = 0;
+            // 
+            // scoreNumericUpDown
+            // 
+            this.scoreNumericUpDown.Location = new System.Drawing.Point(12, 114);
+            this.scoreNumericUpDown.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.scoreNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.scoreNumericUpDown.Name = "scoreNumericUpDown";
+            this.scoreNumericUpDown.Size = new System.Drawing.Size(120, 22);
+            this.scoreNumericUpDown.TabIndex = 1;
+            this.scoreNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // submitButton
+            // 
+            this.submitButton.Location = new System.Drawing.Point(12, 142);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.TabIndex = 2;
+            this.submitButton.Text = "Submit";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // ReviewForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1340, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(340, 180);
+            this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.scoreNumericUpDown);
+            this.Controls.Add(this.commentTextBox);
             this.Name = "ReviewForm";
-            this.Text = "ReviewForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Text = "Review Form";
+            this.Load += new System.EventHandler(this.ReviewForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.scoreNumericUpDown)).EndInit();
             this.ResumeLayout(false);
-
+            this.PerformLayout();
         }
 
-        #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox commentTextBox;
+        private System.Windows.Forms.NumericUpDown scoreNumericUpDown;
+        private System.Windows.Forms.Button submitButton;
     }
 }

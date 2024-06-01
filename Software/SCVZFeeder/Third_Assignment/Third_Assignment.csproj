@@ -57,12 +57,14 @@
       <DependentUpon>MealForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Review.cs" />
     <Compile Include="PI2324_rbistrici22_DBDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PI2324_rbistrici22_DBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Repositories\MealRepository.cs" />
+    <Compile Include="Repositories\ReviewRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
     <Compile Include="ReviewForm.cs">
       <SubType>Form</SubType>
