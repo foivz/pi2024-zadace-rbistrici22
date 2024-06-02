@@ -23,7 +23,7 @@
             // 
             this.searchTextBox.Location = new System.Drawing.Point(103, 22);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(200, 22);
+            this.searchTextBox.Size = new System.Drawing.Size(210, 22);
             this.searchTextBox.TabIndex = 0;
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 

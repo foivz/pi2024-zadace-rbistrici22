@@ -34,7 +34,7 @@
             // 
             this.PasswordTxt.Location = new System.Drawing.Point(307, 244);
             this.PasswordTxt.Name = "PasswordTxt";
-            this.PasswordTxt.PasswordChar = '*';  // Dodano za skrivanje lozinke
+            this.PasswordTxt.PasswordChar = '*';
             this.PasswordTxt.Size = new System.Drawing.Size(190, 22);
             this.PasswordTxt.TabIndex = 1;
             // 

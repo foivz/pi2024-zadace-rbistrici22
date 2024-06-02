@@ -24,7 +24,16 @@ namespace Third_Assignment
 
             if (review != null)
             {
-                scoreNumericUpDown.Value = review.Score;
+                // Populating the ComboBox with scores
+                scoreComboBox.Items.Add(1);
+                scoreComboBox.Items.Add(2);
+                scoreComboBox.Items.Add(3);
+                scoreComboBox.Items.Add(4);
+                scoreComboBox.Items.Add(5);
+
+                // Setting the selected score from the review
+                scoreComboBox.SelectedItem = review.Score;
+
                 commentTextBox.Text = review.Comment;
             }
             else
@@ -36,7 +45,7 @@ namespace Third_Assignment
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            review.Score = (int)scoreNumericUpDown.Value;
+            review.Score = Convert.ToInt32(scoreComboBox.SelectedItem);
             review.Comment = commentTextBox.Text;
 
             ReviewRepository.UpdateReview(review);
