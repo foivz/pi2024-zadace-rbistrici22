@@ -36,5 +36,13 @@ namespace Third_Assignment
 
             //LoadReviews();  // Refresh the reviews after adding a new one
         }
+
+        private void CancleBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
+            this.Close();
+        }
     }
 }
