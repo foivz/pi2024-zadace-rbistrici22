@@ -6,6 +6,9 @@ using Third_Assignment.Repositories;
 
 namespace Third_Assignment
 {
+
+
+
     public partial class ViewReviewsForm : Form
     {
         private int mealID;
@@ -23,16 +26,32 @@ namespace Third_Assignment
 
         private void LoadReviews()
         {
-            try
+            // Load reviews related to the specific mealID from the database
+            var reviews = ReviewRepository.GetReviewsByMealID(mealID);
+            dgvReviews.DataSource = reviews;
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            if (dgvReviews.SelectedCells.Count > 0)
             {
-                List<Review> reviews = ReviewRepository.GetReviewsByMealID(mealID);
-                dgvReviews.DataSource = reviews;
-                dgvReviews.Refresh();
+                int rowIndex = dgvReviews.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dgvReviews.Rows[rowIndex];
+
+                // Assuming ReviewID is in the first column
+                int reviewID = Convert.ToInt32(selectedRow.Cells["ReviewID"].Value);
+
+                EditReviewForm editReviewForm = new EditReviewForm(reviewID);
+                editReviewForm.ShowDialog();
+
+                // Reload reviews after editing
+                LoadReviews();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a review first.", "No review selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
+ 
 }

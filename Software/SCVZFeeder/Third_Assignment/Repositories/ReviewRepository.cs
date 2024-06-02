@@ -77,6 +77,23 @@ namespace Third_Assignment.Repositories
             return reviews;
         }
 
+        public static Review GetReviewByReviewID(int reviewID)
+        {
+            Review review = null;
+            string sql = $"SELECT * FROM Review WHERE ReviewID = {reviewID}";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            if (reader.HasRows)
+            {
+                reader.Read();
+                review = CreateObject(reader);
+                reader.Close();
+            }
+            DB.CloseConnection();
+            return review;
+        }
+
+
         // Pomoćna metoda za kreiranje objekta Review iz SqlDataReader-a
         private static Review CreateObject(SqlDataReader reader)
         {

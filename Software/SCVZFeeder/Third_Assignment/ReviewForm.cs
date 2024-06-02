@@ -47,6 +47,9 @@ namespace Third_Assignment
                 Comment = comment
             });
             MessageBox.Show("Review submitted successfully!");
+            this.Hide();
+            MainForm mealForm = new MainForm();
+            mealForm.Show();
 
             //LoadReviews();  // Refresh the reviews after adding a new one
         }
