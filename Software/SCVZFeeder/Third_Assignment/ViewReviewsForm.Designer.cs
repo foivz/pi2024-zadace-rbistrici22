@@ -28,7 +28,7 @@
             // 
             // EditBtn
             // 
-            this.EditBtn.Location = new System.Drawing.Point(12, 406);
+            this.EditBtn.Location = new System.Drawing.Point(125, 406);
             this.EditBtn.Name = "EditBtn";
             this.EditBtn.Size = new System.Drawing.Size(100, 30);
             this.EditBtn.TabIndex = 1;
@@ -38,7 +38,7 @@
             // 
             // deleteBtn
             // 
-            this.deleteBtn.Location = new System.Drawing.Point(118, 406);
+            this.deleteBtn.Location = new System.Drawing.Point(231, 406);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(100, 30);
             this.deleteBtn.TabIndex = 2;
@@ -48,7 +48,7 @@
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(224, 406);
+            this.BackBtn.Location = new System.Drawing.Point(12, 406);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(100, 30);
             this.BackBtn.TabIndex = 3;
@@ -80,6 +80,7 @@
             this.Load += new System.EventHandler(this.ViewReviewsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReviews)).EndInit();
             this.ResumeLayout(false);
+
         }
     }
 }
