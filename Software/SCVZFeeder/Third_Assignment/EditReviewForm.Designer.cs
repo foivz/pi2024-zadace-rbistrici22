@@ -6,6 +6,7 @@
         private System.Windows.Forms.ComboBox scoreComboBox;
         private System.Windows.Forms.TextBox commentTextBox;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button CancelEditBtn;
 
         protected override void Dispose(bool disposing)
         {
@@ -21,6 +22,7 @@
             this.scoreComboBox = new System.Windows.Forms.ComboBox();
             this.commentTextBox = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.CancelEditBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // scoreComboBox
@@ -50,11 +52,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // CancelEditBtn
+            // 
+            this.CancelEditBtn.Location = new System.Drawing.Point(182, 178);
+            this.CancelEditBtn.Name = "CancelEditBtn";
+            this.CancelEditBtn.Size = new System.Drawing.Size(68, 26);
+            this.CancelEditBtn.TabIndex = 3;
+            this.CancelEditBtn.Text = "Cancel";
+            this.CancelEditBtn.UseVisualStyleBackColor = true;
+            this.CancelEditBtn.Click += new System.EventHandler(this.CancelEditBtn_Click);
+            // 
             // EditReviewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 220);
+            this.Controls.Add(this.CancelEditBtn);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.commentTextBox);
             this.Controls.Add(this.scoreComboBox);

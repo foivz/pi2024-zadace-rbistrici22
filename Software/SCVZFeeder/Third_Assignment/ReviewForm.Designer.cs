@@ -78,6 +78,7 @@
             this.Controls.Add(this.commentTextBox);
             this.Name = "ReviewForm";
             this.Text = "Review Form";
+            this.Load += new System.EventHandler(this.ReviewForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

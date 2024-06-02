@@ -54,5 +54,10 @@ namespace Third_Assignment
         {
             // Event handler for scoreComboBox selection change, if needed
         }
+
+        private void ReviewForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
