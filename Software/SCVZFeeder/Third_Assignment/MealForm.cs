@@ -94,5 +94,10 @@ namespace Third_Assignment
         {
             // Ovdje možete dodati kod za obradu događaja ako je potrebno
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
