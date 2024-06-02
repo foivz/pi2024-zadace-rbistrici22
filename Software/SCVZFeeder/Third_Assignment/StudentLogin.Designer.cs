@@ -2,15 +2,8 @@
 {
     partial class StudentLogin
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,12 +13,6 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.UsernameTxt = new System.Windows.Forms.TextBox();
@@ -47,6 +34,7 @@
             // 
             this.PasswordTxt.Location = new System.Drawing.Point(307, 244);
             this.PasswordTxt.Name = "PasswordTxt";
+            this.PasswordTxt.PasswordChar = '*';  // Dodano za skrivanje lozinke
             this.PasswordTxt.Size = new System.Drawing.Size(190, 22);
             this.PasswordTxt.TabIndex = 1;
             // 
@@ -97,8 +85,6 @@
 
         }
 
-        #endregion
-
         private System.Windows.Forms.TextBox UsernameTxt;
         private System.Windows.Forms.TextBox PasswordTxt;
         private System.Windows.Forms.Label Username;
@@ -106,4 +92,3 @@
         private System.Windows.Forms.Button Login;
     }
 }
-
