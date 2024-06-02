@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using Third_Assignment.Models;
 using Third_Assignment.Repositories;
@@ -14,13 +13,21 @@ namespace Third_Assignment
         {
             InitializeComponent();
             this.mealID = mealID;
-        }
 
-       
+            // Postavljanje placeholdera
+            scoreComboBox.Items.Insert(0, "RATE");
+            scoreComboBox.SelectedIndex = 0;
+        }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            int score = (int)scoreNumericUpDown.Value;
+            if (scoreComboBox.SelectedIndex == 0)
+            {
+                MessageBox.Show("Please select a rating before submitting.");
+                return;
+            }
+
+            int score = int.Parse(scoreComboBox.SelectedItem.ToString());
             string comment = commentTextBox.Text;
 
             ReviewRepository.AddReview(new Review
@@ -31,10 +38,8 @@ namespace Third_Assignment
             });
             MessageBox.Show("Review submitted successfully!");
             this.Hide();
-            MainForm mealForm = new MainForm();
-            mealForm.Show();
-
-            //LoadReviews();  // Refresh the reviews after adding a new one
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
 
         private void CancleBtn_Click(object sender, EventArgs e)
@@ -43,6 +48,11 @@ namespace Third_Assignment
             MainForm mainForm = new MainForm();
             mainForm.ShowDialog();
             this.Close();
+        }
+
+        private void scoreComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Event handler for scoreComboBox selection change, if needed
         }
     }
 }
