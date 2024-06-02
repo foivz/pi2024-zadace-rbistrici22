@@ -1,15 +1,10 @@
 ﻿using DBLayer;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
-using Third_Assignment.Models;
 using Third_Assignment.Repositories;
 
 namespace Third_Assignment
 {
-
-
-
     public partial class ViewReviewsForm : Form
     {
         private int mealID;
@@ -27,7 +22,6 @@ namespace Third_Assignment
 
         private void LoadReviews()
         {
-            // Load reviews related to the specific mealID from the database
             var reviews = ReviewRepository.GetReviewsByMealID(mealID);
             dgvReviews.DataSource = reviews;
         }
@@ -38,14 +32,9 @@ namespace Third_Assignment
             {
                 int rowIndex = dgvReviews.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvReviews.Rows[rowIndex];
-
-                // Assuming ReviewID is in the first column
                 int reviewID = Convert.ToInt32(selectedRow.Cells["ReviewID"].Value);
-
                 EditReviewForm editReviewForm = new EditReviewForm(reviewID);
                 editReviewForm.ShowDialog();
-
-                // Reload reviews after editing
                 LoadReviews();
             }
             else
@@ -54,26 +43,18 @@ namespace Third_Assignment
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             if (dgvReviews.SelectedCells.Count > 0)
             {
                 int rowIndex = dgvReviews.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dgvReviews.Rows[rowIndex];
-
-                // Pretpostavljamo da je ReviewID u prvoj koloni
                 int reviewID = Convert.ToInt32(selectedRow.Cells["ReviewID"].Value);
-
                 var result = MessageBox.Show("Are you sure you want to delete this review?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
                 if (result == DialogResult.Yes)
                 {
                     DeleteReview(reviewID);
-                    LoadReviews(); // Osvježavanje liste nakon brisanja
+                    LoadReviews();
                 }
             }
             else
@@ -90,6 +71,12 @@ namespace Third_Assignment
             DB.CloseConnection();
         }
 
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
+            this.Close();
+        }
     }
-
 }

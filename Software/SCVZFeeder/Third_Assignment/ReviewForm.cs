@@ -16,24 +16,7 @@ namespace Third_Assignment
             this.mealID = mealID;
         }
 
-        /*private void ReviewForm_Load(object sender, EventArgs e)
-        {
-            LoadReviews();
-        }
-
-        private void LoadReviews()
-        {
-            try
-            {
-                List<Review> reviews = ReviewRepository.GetReviewsByMealID(mealID);
-                dgvReviews.DataSource = reviews;
-                dgvReviews.Refresh();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }*/
+       
 
         private void submitButton_Click(object sender, EventArgs e)
         {
