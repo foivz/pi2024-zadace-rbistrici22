@@ -6,17 +6,17 @@ using Third_Assignment.Repositories;
 
 namespace Third_Assignment
 {
-    public partial class ReviewForm : Form
+    public partial class ViewReviewsForm : Form
     {
         private int mealID;
 
-        public ReviewForm(int mealID)
+        public ViewReviewsForm(int mealID)
         {
             InitializeComponent();
             this.mealID = mealID;
         }
 
-        /*private void ReviewForm_Load(object sender, EventArgs e)
+        private void ViewReviewsForm_Load(object sender, EventArgs e)
         {
             LoadReviews();
         }
@@ -33,22 +33,6 @@ namespace Third_Assignment
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }*/
-
-        private void submitButton_Click(object sender, EventArgs e)
-        {
-            int score = (int)scoreNumericUpDown.Value;
-            string comment = commentTextBox.Text;
-
-            ReviewRepository.AddReview(new Review
-            {
-                MealID = mealID,
-                Score = score,
-                Comment = comment
-            });
-            MessageBox.Show("Review submitted successfully!");
-
-            //LoadReviews();  // Refresh the reviews after adding a new one
         }
     }
 }

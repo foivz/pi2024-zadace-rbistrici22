@@ -79,5 +79,27 @@ namespace Third_Assignment
         {
 
         }
+
+        private void ViewBtn_Click(object sender, EventArgs e)
+        {
+            if (dvgmeal.SelectedCells.Count > 0)
+            {
+                int rowIndex = dvgmeal.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dvgmeal.Rows[rowIndex];
+
+                // Pretpostavimo da je MealID u prvom stupcu
+                int mealID = Convert.ToInt32(selectedRow.Cells["MealID"].Value);
+
+                this.Hide();
+                ViewReviewsForm viewReviewsForm = new ViewReviewsForm(mealID);
+                viewReviewsForm.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a meal first.", "No meal selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

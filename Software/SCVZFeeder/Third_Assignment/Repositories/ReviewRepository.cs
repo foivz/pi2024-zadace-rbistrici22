@@ -60,6 +60,23 @@ namespace Third_Assignment.Repositories
             DB.CloseConnection();
         }
 
+        // Metoda za dohvaćanje svih recenzija po ID-u obroka
+        public static List<Review> GetReviewsByMealID(int mealID)
+        {
+            List<Review> reviews = new List<Review>();
+            string sql = $"SELECT * FROM Review WHERE MealID = {mealID}";
+            DB.OpenConnection();
+            var reader = DB.GetDataReader(sql);
+            while (reader.Read())
+            {
+                Review review = CreateObject(reader);
+                reviews.Add(review);
+            }
+            reader.Close();
+            DB.CloseConnection();
+            return reviews;
+        }
+
         // Pomoćna metoda za kreiranje objekta Review iz SqlDataReader-a
         private static Review CreateObject(SqlDataReader reader)
         {
